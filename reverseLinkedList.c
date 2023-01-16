@@ -2,7 +2,8 @@
 #include<stdlib.h>
 
 /*
-3-3. [3] Give an algorithm to reverse the direction of a given singly linked list. In other words, after the reversal all pointers should now point backwards. Your algorithm should take linear time.
+3-3. [3] Give an algorithm to reverse the direction of a given singly linked list. 
+In other words, after the reversal all pointers should now point backwards. Your algorithm should take linear time.
 */
 
 struct ListNode
@@ -63,16 +64,19 @@ void freeList(struct ListNode* head)
 
 int main(void)
 {
-	struct ListNode* head = {NULL};
+	struct ListNode* head = NULL;
 	addFirst(&head, 10);
 	addFirst(&head, 20);
 	addFirst(&head, 30);
 
 	printf("Given linked list\n");
 	printListData(head);
+	
 	reverse(&head);
 	printf("\nReversed linked list \n");
+	
 	printListData(head);
 	freeList(head);
+	
 	return 0;
 }
