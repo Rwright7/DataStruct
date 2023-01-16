@@ -58,8 +58,10 @@ void inorder(struct node* root)
 	{
 		return;
 	}
+	
 	inorder(root -> left);
 	printf("%d ", root -> key);
+	
 	struct linkedlist* temp = newListNode(root -> key);
 	if (head == NULL)
 	{
@@ -101,6 +103,7 @@ void freeList()
 int main(void)
 {
 	struct node* root = NULL;
+	
 	root = insert(root, 50);
 	insert(root, 30);
 	insert(root, 20);
@@ -108,11 +111,13 @@ int main(void)
 	insert(root, 70);
 	insert(root, 60);
 	insert(root, 80);
+	
 	printf("BST: ");
 	inorder(root);
 	printf("\n");
 	printListData();
 	freeList();
+	
 	return 0;
 }
 
