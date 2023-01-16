@@ -7,7 +7,7 @@
 int main ()
 {
     char **line_ptr = calloc(MAX_LINE_SIZE, sizeof(*line_ptr));
-    char line[MAX_LINE_SIZE];      //stores the total number of lines
+    char line[MAX_LINE_SIZE];     
     int length = 0, i = 0;
 
     printf("Enter a series of lines: ");
@@ -18,6 +18,7 @@ int main ()
         {
             break;
         }
+        
         line_ptr[i] = strndup(line, length);
             if (line_ptr[i] == NULL)
             {
