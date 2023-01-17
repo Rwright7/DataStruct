@@ -35,4 +35,17 @@ void divide(int* dividend, int* divisor, int* quotient, int* remainder)
             *dividend = -(*dividend);
        }
 
+       if(*divisor < 0)
+       {
+            sign = -sign;
+            *divisor = -(*divisor);
+       }
+       
+       *remainder = *dividend;
+       while(*remainder >= *divisor)
+       {
+            *remainder -= *divisor;
+            (*quotient)++;
+       }
+       quotient *= sign;
 }
